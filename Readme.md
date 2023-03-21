@@ -1,0 +1,1 @@
+Curso de JacaScript do Curso em Vídeo para iniciantes. Ministrado pelo Professor Gustavo Guanabara.
