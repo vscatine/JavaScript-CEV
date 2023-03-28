@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Identificador de brasileiro</h1>
+    <label for="pais">Em qual país você nasceu?</label>
+    <input type="text" name="pais" id="pais">
+    <button type="submit" id="btnnac" onclick="clicar()">Enviar</button>
+    <div id="res"></div>
+    <script>
+        function clicar() {
+            var pais = window.document.querySelector('input#pais')
+            var PAIS = String(pais.value).toUpperCase()
+            var res = window.document.querySelector('div#res')
+            if (PAIS != 'BRASIL') {                
+                res.innerHTML = '<p>Você é <strong>estrangeiro</strong>.</p>'
+            } else {
+                res.innerHTML = '<p>Você é <strong>brasileiro</strong>.</p>'
+            }
+        }
+    </script>
+</body>
+</html>

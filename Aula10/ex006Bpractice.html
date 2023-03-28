@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+    <style>
+        .btn {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            border-radius: 10px;
+        }
+
+        .btn p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20pt;
+            line-height: 200px;
+            text-align: center;
+            color: antiquewhite;
+        }
+
+        .btn2 {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            border-radius: 10px;
+        }
+
+        .btn2 p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20pt;
+            line-height: 200px;
+            text-align: center;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn" onclick="clicou()" onmouseenter="entrou()" onmouseout="saiu()">
+        <p>Interaja</p>
+    </div>
+    <div class="btn2">
+        <p>Interaja</p>
+    </div>
+    <script>
+        var btntxt2 = window.document.querySelector('div.btn2>p')
+        var btn2 = window.document.querySelector('div.btn2')
+        btn2.addEventListener('click', clicou2)
+        btn2.addEventListener('mouseenter', entrou2)
+        btn2.addEventListener('mouseout', saiu2)
+
+        function clicou2 () {
+            btn2.style.background = 'green'
+            btntxt2.innerText = 'Clicou!'
+        }
+
+        function entrou2() {
+            btn2.style.background = 'yellow'
+            btntxt2.style.color = 'black'
+            btntxt2.innerText = 'Entrou...'
+        }
+
+        function saiu2() {
+            btn2.style.background = 'red'
+            btntxt2.style.color = 'white'
+            btntxt2.innerText = 'Saiu'
+        }
+
+        var btntxt = window.document.querySelector('div.btn>p')
+        var btn = window.document.querySelector('.btn')
+        function clicou() {
+            btntxt.innerText = 'Clicou!'
+            btn.style.background = 'green'
+        }
+
+        function entrou() {
+            btntxt.innerText = 'Entrou'
+            btn.style.background = 'yellow'
+            btntxt.style.color = 'black'
+        }
+
+        function saiu() {
+            btntxt.innerText = 'Saiu'
+            btn.style.background = 'red'
+            btn.style.colol = 'white'
+        }
+    </script>
+</body>
+</html>

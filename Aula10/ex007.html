@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM - Soma</title>
+    <style>
+       body {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 18pt;
+       }
+
+        #res {
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 250px;
+            height: 35px;
+            text-align: center;
+        }
+
+        #n1, #n2 {
+            width: 100px;
+            height: 30px;
+            text-align: center;
+        }
+
+        #btn {
+            height: 35px;
+            width: 35px;
+            border: 0.5px solid black;
+            border-radius: 3px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.507);
+            background-color: lightgray;
+        }
+
+        #btn:active {
+            box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.507);
+            font-weight: bolder;
+            font-size: 0.6em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" id="n1"> +
+    <input type="number" id="n2">
+    <button id="btn">=</button>
+    <div id="res">Resultado</div>
+    <script>
+        var res = window.document.querySelector('#res')
+        res.addEventListener('click', clicou)
+        res.addEventListener('mouseout', saiu)
+        function clicou() {
+            res.style.background = 'purple'
+            res.style.color = 'white'
+        }
+        function saiu() {
+            res.style.background = 'white'
+            res.style.color = 'black '
+        }
+        var btn = window.document.querySelector('button#btn')
+        btn.addEventListener('click', result)
+        function result() {
+            var txtn1 = window.document.querySelector('#n1')
+            var txtn2 = window.document.querySelector('#n2')
+            var res = window.document.querySelector('div#res')
+            n1 = Number(txtn1.value)
+            n2 = Number(txtn2.value)
+            var sum = n1 + n2
+            res.innerText = sum
+        }
+        
+
+    </script>
+</body>
+</html>
