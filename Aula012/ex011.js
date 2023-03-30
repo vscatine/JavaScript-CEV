@@ -1,0 +1,11 @@
+var idade = 71
+var resp = console.log(`Com ${idade} anos `)
+if (idade < 16) {
+    resp += console.log('você NÃO pode votar!')
+} else {
+    if (idade >= 16 && idade < 18 || idade > 70) {
+        resp += console.log('o voto é opcional.')
+    } else {
+        resp += console.log('o voto é OBRIGATÓRIO!')
+    }
+}
