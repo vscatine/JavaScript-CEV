@@ -1,10 +1,10 @@
 function parimp(n) {
-    if (n%2==0) {
-        return 'par'
+    if (n%2 == 0) {
+        return(`${n} é par.`)
     } else {
-        return 'ímpar'
+        return(`${n} é ímpar.`)
     }
 }
 
-let res = parimp(2)
-console.log(`${res}`)
+var pi = parimp(3)
+console.log(pi)
