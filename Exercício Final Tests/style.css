@@ -17,7 +17,7 @@ section {
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.253);
 }
 
-select#valores {
+select#values {
     width: 200px;
     height: 200px;
 }

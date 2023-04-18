@@ -1,31 +1,47 @@
-var nt = document.querySelector('input#num')
-
+var tnum = document.querySelector('input#num')
+var valsel = document.querySelector('select#values')
 var vals = []
 
 function numcheck(x) {
-    if (Number(x) > 0 && Number(x) < 101) {
+    if (Number(x) >= 1 && Number(x) <= 100) {
         return true
     } else {
         return false
     }
 }
 
-function inlista(x, l) {
-    if (l.indexOf(x) == -1) {
-        return false
-    } else {
+function inlist(n, l) {
+    if (l.indexOf(Number(n)) != -1) {
         return true
-    }
-}
-
-
-function add() {
-    if (numcheck(nt.value) && !inlista(nt.value, vals)) {
-        vals.push(Number(nt.value))
-        nt.value = ''
     } else {
-        alert('[ERRO] alguma coisa')
-        nt.value = ''
+        return false
     }
 }
 
+function empty(x) {
+    if (x.length == 0 ) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function adicionar() {
+    var item = document.createElement('option')
+    if (numcheck(tnum.value) && !inlist(tnum.value, vals)) {
+        vals.push(Number(tnum.value))
+        item.text = `${tnum.value} foi adicionado.`
+        item.value = `${tnum.value}`
+        valsel.appendChild(item)
+        tnum.value = ''
+    } else if (empty(tnum.value)) {
+        alert('[ERRO] Insira um número!')
+        tnum.value = ''
+    } else if (inlist(tnum.value, vals)){
+        alert(`${tnum.value} já foi adicionado.`)
+        tnum.value = ''
+    } else {
+        alert('[ERRO] Apenas números de 1 a 100!')
+        tnum.value=''
+    }
+}

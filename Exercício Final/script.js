@@ -1,11 +1,30 @@
+var nt = document.querySelector('input#num')
+
+var vals = []
+
+function numcheck(x) {
+    if (Number(x) > 0 && Number(x) < 101) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function inlista(x, l) {
+    if (l.indexOf(x) == -1) {
+        return false
+    } else {
+        return true
+    }
+}
+
+
 function add() {
-    var nt = document.querySelector('input#num')
-    var n = Number.parseInt(nt.value)
-    if (n <1 || n >100 || nt.value.length == 0) {
-        alert('[ERRO] Valor inválido!')
+    if (numcheck(nt.value) && !inlista(nt.value, vals)) {
+        vals.push(Number(nt.value))
         nt.value = ''
     } else {
-        alert(`N ${n}`)
+        alert('[ERRO] alguma coisa')
         nt.value = ''
     }
-} 
+}
