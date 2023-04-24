@@ -15,13 +15,11 @@
         <div>
             <label for="num">Número (de 1 a 100)</label>
             <input type="number" name="num" id="num" min="1" max="100">
-            <input type="button" value="Adicionar" id="add" onclick="adicionar()">
+            <input type="button" value="Adicionar" id="add" onclick="add()">
             <p>
-                <select name="valores" id="values" size="10"></select>
+                <select name="values" id="values" size="10"></select>
             </p>
-            <p>
-                <button type="submit" id="end">Finalizar</button>
-            </p>
+            <button type="submit" id="end" onclick="end()">Finalizar</button>
         </div>
         <div id="res">
             
