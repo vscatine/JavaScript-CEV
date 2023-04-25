@@ -5,7 +5,6 @@ var vals = []
 var high = 0
 var low = 100
 var sum = 0
-var average = 0
 
 
 function numcheck(n) {
@@ -52,12 +51,27 @@ function add() {
     } else if (empty(num.value) || !numcheck(n)) {
         alert('[ERRO] Digite um número entre 1 e 100')
         num.value = ''
+        res.innerHTML = ''
     } else if (inlist(n, vals)) {
         alert(`${n} já foi inserido!`)
         num.value = ''
+        res.innerHTML = ''
     }
 }
 
 function end() {
-    res.innerHTML = `<br>Foram digitados ${vals.length} números.<br>O maior número digitado foi ${high}.<br>O menor número digitado foi ${low}.`
+    for (var c=0; c < vals.length; c++) {
+        sum += vals[c]
+    }
+
+    var average = sum/vals.length
+
+    res.innerHTML = `<br>Foram digitados ${vals.length} números.<br>O maior número digitado foi ${high}.<br>O menor número digitado foi ${low}.<br>A soma dos valores é igual a ${sum}<br>A média é ${average}`
+}
+
+function clear() {
+    for (let c = vals.length; c > 0; c--) {
+        vals.pop()
+    }
+
 }
