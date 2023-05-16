@@ -87,6 +87,8 @@ function clean() {
         vals = []
         sel.innerHTML = ''
         res.innerHTML = ''
+        high = 0
+        low = 100
     } 
     num.focus() 
 }
