@@ -56,6 +56,7 @@ function inlist(x, l) {
 }
 
 function end() {
+    zerar()
     quant = vals.length
     if (quant == 0) {
         window.alert('Digite um número!')
@@ -72,6 +73,12 @@ function end() {
         res.innerHTML += `${high} é o maior valor.<br>`
         res.innerHTML += `${low} é o menor valor.<br>`
         res.innerHTML += `A soma dos valores é igual a ${sum}.`
+    }
+}
+
+function zerar() {
+    if (sum != 0) {
+        sum = 0
     }
 }
 
